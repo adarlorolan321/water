@@ -21,7 +21,7 @@ class OrderResource extends JsonResource
         $customer = $this->user->customer;
         $shipping = $customer->shippingAddress;
         $billing = $customer->billingAddress;
-
+        
         return [
             'id' => $this->id,
             'status' => $this->status,
@@ -44,22 +44,22 @@ class OrderResource extends JsonResource
                 'last_name' => $customer->last_name,
                 'phone' => $customer->phone,
                 'shippingAddress' => [
-                    'id' => $shipping->id,
-                    'address1' => $shipping->address1,
-                    'address2' => $shipping->address2,
-                    'city' => $shipping->city,
-                    'state' => $shipping->state,
-                    'zipcode' => $shipping->zipcode,
-                    'country' => $shipping->country->name,
+                    'id' => $shipping?$shipping->id:'',
+                    'address1' => $shipping?$shipping->address1:'',
+                    'address2' => $shipping?$shipping->address2:'',
+                    'city' => $shipping?$shipping->city:'',
+                    'state' => $shipping?$shipping->state:'',
+                    'zipcode' => $shipping?$shipping->zipcode:'',
+                    'country' => $shipping?$shipping->country->name:'',
                 ],
                 'billingAddress' => [
-                    'id' => $billing->id,
-                    'address1' => $billing->address1,
-                    'address2' => $billing->address2,
-                    'city' => $billing->city,
-                    'state' => $billing->state,
-                    'zipcode' => $billing->zipcode,
-                    'country' => $billing->country->name,
+                    'id' => $billing?$billing->id:'',
+                    'address1' => $billing?$billing->address1:'',
+                    'address2' => $billing?$billing->address2:'',
+                    'city' => $billing?$billing->city:'',
+                    'state' => $billing?$billing->state:'',
+                    'zipcode' => $billing?$billing->zipcode:'',
+                    'country' => $billing?$billing->country->name:'',
                 ]
             ],
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),

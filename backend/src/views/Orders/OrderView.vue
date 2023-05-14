@@ -125,10 +125,12 @@ const order = ref(null);
 const orderStatuses = ref([]);
 
 onMounted(() => {
-  store.dispatch('getOrder', route.params.id)
-    .then(({data}) => {
+  console.log(route.params.id)
+  axiosClient.get(`/orders/${route.params.id}`).then(({data}) => {
       order.value = data
     })
+
+    
 
   axiosClient.get(`/orders/statuses`)
     .then(({data}) => orderStatuses.value = data)

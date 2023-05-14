@@ -38,11 +38,15 @@ class OrderController extends Controller
     }
 
     public function view(Order $order)
-    {
+    {   
+        
         $order->load('items.product');
         return new OrderResource($order);
     }
 
+  public function ViewProduct(Order $order){
+    return new OrderResource($order->load('items.product'));
+  }
     public function getStatuses()
     {
         return OrderStatus::getStatuses();

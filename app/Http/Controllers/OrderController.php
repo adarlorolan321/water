@@ -19,15 +19,14 @@ class OrderController extends Controller
 
         return view('order.index', compact('orders'));
     }
-
     public function view(Order $order)
     {
         /** @var \App\Models\User $user */
         $user = \request()->user();
-        if ($order->created_by !== $user->id) {
+        if (!$order || $order->created_by !== $user->id) {
             return response("You don't have permission to view this order", 403);
         }
-
+    
         return view('order.view', compact('order'));
     }
 }
