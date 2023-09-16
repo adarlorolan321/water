@@ -52,6 +52,25 @@ export function getOrders({commit, state}, {url = null, search = '', per_page, s
       commit('setOrders', [false])
     })
 }
+export function getFeedbacks({commit, state}, {url = null, search = '', per_page, sort_field, sort_direction} = {}) {
+  commit('setFeedbacks', [true])
+  url = url || '/feedbacks'
+  const params = {
+    per_page: state.orders.limit,
+  }
+  return axiosClient.get(url, {
+    params: {
+      ...params,
+      search, per_page, sort_field, sort_direction
+    }
+  })
+    .then((response) => {
+      commit('setFeedbacks', [false, response.data])
+    })
+    .catch(() => {
+      commit('setFeedbacks', [false])
+    })
+}
 
 export function getOrder({commit}, id) {
   return axiosClient.get(`/orders/${id}`)

@@ -11,6 +11,7 @@ import OrderView from "../views/Orders/OrderView.vue";
 import RequestPassword from "../views/RequestPassword.vue";
 import ResetPassword from "../views/ResetPassword.vue";
 import NotFound from "../views/NotFound.vue";
+import Feedbacks from "../views/Feedbacks/FeedbacksView.vue"
 import store from "../store";
 import Report from "../views/Reports/Report.vue";
 import OrdersReport from "../views/Reports/OrdersReport.vue";
@@ -49,6 +50,11 @@ const routes = [
         path: 'customers',
         name: 'app.customers',
         component: Customers
+      },
+      {
+        path: 'feedbacks',
+        name: 'app.feedbacks',
+        component: Feedbacks
       },
       {
         path: 'customers/:id',

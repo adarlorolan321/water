@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FeebacksController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -40,6 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/checkout/failure', [CheckoutController::class, 'failure'])->name('checkout.failure');
     Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
     Route::get('/orders/{order}', [OrderController::class, 'view'])->name('order.view');
+    Route::resource('/feedbacks', FeebacksController::class);
 });
 
 Route::post('/webhook/stripe', [CheckoutController::class, 'webhook']);
