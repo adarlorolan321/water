@@ -11,8 +11,8 @@ class FeebacksController extends Controller
     {
         $order_id = $request->order_id;
 
-
-        return view('feedbacks.index', compact('order_id'));
+        $feedbacks = Feedbacks::where('order_id', $order_id)->get();
+        return view('feedbacks.index', compact('feedbacks', 'order_id'));
     }
 
     public function store(Request $request)
