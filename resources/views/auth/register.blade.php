@@ -1,8 +1,11 @@
 <x-app-layout>
+    <div class="mx-auto w-48 h-48 mt-12">
+        <img class="rounded-full" src="https://i.pinimg.com/564x/eb/71/57/eb7157902a2b0f1737e1d2e8ef55df48.jpg" alt="">
+    </div>
     <form
         action="{{ route('register') }}"
         method="post"
-        class="w-[400px] mx-auto p-6 my-16"
+        class="w-[400px] mx-auto p-6 my-4"
     >
         @csrf
 
@@ -11,7 +14,7 @@
             or
             <a
                 href="{{ route('login') }}"
-                class="text-sm text-purple-700 hover:text-purple-600"
+                class="text-sm text-blue-700 hover:text-blue-600 hover:font-semibold"
             >
                 login with existing account
             </a>
@@ -34,7 +37,7 @@
         </div>
 
         <button
-            class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
+            class="btn-primary bg-blue-500 hover:bg-blue-600 active:bg-blue-700 w-full"
         >
             Signup
         </button>

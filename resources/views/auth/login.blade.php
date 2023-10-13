@@ -1,5 +1,8 @@
 <x-app-layout>
-    <form method="POST" action="{{ route('login') }}" class="w-[400px] mx-auto p-6 my-16">
+    <div class="mx-auto w-48 h-48 mt-12">
+        <img class="rounded-full" src="https://i.pinimg.com/564x/eb/71/57/eb7157902a2b0f1737e1d2e8ef55df48.jpg" alt="">
+    </div>
+    <form method="POST" action="{{ route('login') }}" class="w-[400px] mx-auto p-6 my-4">
         <h2 class="text-2xl font-semibold text-center mb-5">
             Login to your account
         </h2>
@@ -7,7 +10,7 @@
             or
             <a
                 href="{{ route('register') }}"
-                class="text-sm text-purple-700 hover:text-purple-600"
+                class="text-sm text-blue-700 hover:text-blue-600 hover:font-semibold"
             >
                 create new account
             </a>
@@ -28,18 +31,18 @@
                 <input
                     id="loginRememberMe"
                     type="checkbox"
-                    class="mr-3 rounded border-gray-300 text-purple-500 focus:ring-purple-500"
+                    class="mr-3 rounded border-gray-300 text-blue-500 focus:ring-blue-500"
                 />
                 <label for="loginRememberMe">Remember Me</label>
             </div>
             @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}" class="text-sm text-purple-700 hover:text-purple-600">
+                <a href="{{ route('password.request') }}" class="text-sm text-blue-700 hover:text-blue-600 hover:font-semibold">
                     Forgot Password?
                 </a>
             @endif
         </div>
         <button
-            class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
+            class="btn-primary bg-blue-500 hover:bg-blue-600 active:bg-blue-700 w-full"
         >
             Login
         </button>

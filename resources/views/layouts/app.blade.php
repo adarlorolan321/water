@@ -4,8 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel E-commerce Website') }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon-16x16.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.svg') }}" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+    <title>{{ config('app.name', 'KimKat E-Refill') }}</title>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -29,7 +33,7 @@
     x-transition
     x-cloak
     @notify.window="show($event.detail.message)"
-    class="fixed w-[400px] left-1/2 -ml-[200px] top-16 py-2 px-4 pb-4 bg-emerald-500 text-white"
+    class="fixed w-[400px] left-1/2 -ml-[200px] top-16 py-2 px-4 pb-4 bg-blue-500 text-white"
 >
     <div class="font-semibold" x-text="message"></div>
     <button

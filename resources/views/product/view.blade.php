@@ -82,8 +82,8 @@
                         <template x-for="image in images">
                             <a
                                 @click.prevent="activeImage = image"
-                                class="cursor-pointer w-[80px] h-[80px] border border-gray-300 hover:border-purple-500 flex items-center justify-center"
-                                :class="{'border-purple-600': activeImage === image}"
+                                class="cursor-pointer w-[80px] h-[80px] border border-gray-300 hover:border-blue-500 flex items-center justify-center"
+                                :class="{'border-blue-600': activeImage === image}"
                             >
                                 <img :src="image" alt="" class="w-auto max-auto max-h-full"/>
                             </a>
@@ -106,7 +106,7 @@
                         x-ref="quantityEl"
                         value="1"
                         min="1"
-                        class="w-32 focus:border-purple-500 focus:outline-none rounded"
+                        class="w-32 focus:border-blue-500 focus:outline-none rounded"
                     />
                 </div>
                 <button
@@ -141,7 +141,7 @@
                         <a
                             @click="expanded = !expanded"
                             href="javascript:void(0)"
-                            class="text-purple-500 hover:text-purple-700"
+                            class="text-blue-500 hover:text-blue-700"
                             x-text="expanded ? 'Read Less' : 'Read More'"
                         ></a>
                     </p>
