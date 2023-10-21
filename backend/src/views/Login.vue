@@ -1,6 +1,9 @@
 <template>
+  <div class="mx-auto w-48 h-48 mt-24">
+      <img class="rounded-full" src="https://i.pinimg.com/564x/eb/71/57/eb7157902a2b0f1737e1d2e8ef55df48.jpg" alt="">
+  </div>
   <GuestLayout title="Sign in to your account">
-    <form class="mt-8 space-y-6" method="POST" @submit.prevent="login">
+    <form class="mt-1 space-y-6" method="POST" @submit.prevent="login">
       <div v-if="errorMsg" class="flex items-center justify-between py-3 px-5 bg-red-500 text-white rounded">
         {{ errorMsg }}
         <span
@@ -96,7 +99,7 @@
 <script setup>
 import {ref} from 'vue'
 import {LockClosedIcon} from '@heroicons/vue/solid'
-import GuestLayout from "../components/GuestLayout.vue";
+import GuestLayout from "../components/guestlayout.vue";
 import store from "../store";
 import router from "../router";
 

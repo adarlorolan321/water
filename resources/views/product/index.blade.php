@@ -22,14 +22,14 @@
                         'price' => $product->price,
                         'addToCartUrl' => route('cart.add', $product)
                     ]) }})"
-                    class="border border-1 border-gray-200 rounded-md hover:shadow-2xl transition-colors bg-white"
+                    class="border border-1 border-gray-200 rounded-md hover:shadow-2xl hover:rounded-md transition-colors bg-white"
                 >
                     <a href="{{ route('product.view', $product->slug) }}"
-                       class="aspect-w-3 aspect-h-2 block overflow-hidden">
+                       class="aspect-w-3 aspect-h-2 block overflow-hidden hover:rounded-md">
                         <img
                             src="{{ $product->image }}"
                             alt=""
-                            class="object-cover rounded-lg hover:scale-105 transition-transform"
+                            class="object-cover rounded-lg hover:rounded-md hover:scale-105 transition-transform"
                         />
                     </a>
                     <div class="p-4">

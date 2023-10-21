@@ -49,7 +49,7 @@
   </div>
 
   <div class="grid grid-rows-1 md:grid-rows-2 md:grid-flow-col grid-cols-1 md:grid-cols-3 gap-3">
-    <div class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 bg-white py-6 px-5 rounded-lg shadow">
+    <div class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 bg-white py-6 px-5 rounded-lg shadow h-fit">
       <label class="text-lg font-semibold block mb-2">Latest Orders</label>
       <template v-if="!loading.latestOrders">
         <div v-for="o of latestOrders" :key="o.id" class="py-2 px-3 hover:bg-gray-50">
@@ -74,17 +74,17 @@
       </template>
       <Spinner v-else text="" class=""/>
     </div>
-    <div class="bg-white py-6 px-5 rounded-lg shadow">
+    <div class="bg-white py-6 px-5 rounded-lg shadow h-fit">
       <label class="text-lg font-semibold block mb-2">Latest Customers</label>
       <template v-if="!loading.latestCustomers">
         <router-link :to="{name: 'app.customers.view', params: {id: c.id}}" v-for="c of latestCustomers" :key="c.id"
                      class="mb-3 flex">
-          <div class="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full mr-2">
+          <div class="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full mr-2 px-1">
             <UserIcon class="w-5"/>
           </div>
           <div>
-            <h3>{{ c.first_name }} {{ c.last_name }}</h3>
-            <p>{{ c.email }}</p>
+            <h3 class="text-md">{{ c.first_name }} {{ c.last_name }}</h3>
+            <p class="text-xs">{{ c.email }}</p>
           </div>
         </router-link>
       </template>
